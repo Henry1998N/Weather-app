@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script
+      src="https://kit.fontawesome.com/10078cfd09.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div>
+      <input
+        type="text"
+        placeholder="please enter city to know the weather ?"
+        id="cityName-input"
+      />
+      <button id="search">Search</button>
+    </div>
+    <div class="cities-container"></div>
+    <script id="cities-template" type="text/x-handlebars-template">
+      {{#each cities}}
+        <div class="city">
+          <div class="name" data-name="{{this.name}}">{{this.name}}</div>
+          <div class="temp">{{this.temperature}}°</div>
+          <div class="condition">{{this.condition}}</div>
+          {{#if this.exist}}
+            <i class="fa-sharp fa-solid fa-circle-minus minusIcon"></i>
+          {{else}}
+            <i class="fa-solid fa-circle-plus plusIcon"></i>
+          {{/if}}
+          <img
+            class="conditionPic"
+            src="https://openweathermap.org/img/wn/{{this.conditionPic}}@2x.png"
+          />
+        </div>
+
+      {{/each}}
+    </script>
+    <script src="renderer.js"></script>
+    <script src="apiManager.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

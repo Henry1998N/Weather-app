@@ -1,0 +1,48 @@
+body {
+  margin: 5px;
+  background-color: #74b9ff;
+}
+.plusIcon {
+  grid-area: i;
+  font-size: 60px;
+  cursor: pointer;
+}
+.minusIcon {
+  grid-area: i;
+  font-size: 60px;
+  cursor: pointer;
+}
+.name {
+  padding: 10px;
+
+  grid-area: n;
+  color: white;
+  font-size: 40px;
+}
+
+.city {
+  margin-top: 8px;
+  box-shadow: 3px 3px 3px 2px;
+  display: grid;
+  width: 600px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    ". d s"
+    "i n c"
+    ". n c";
+  /* ". n c"; */
+}
+.temp {
+  grid-area: d;
+  color: white;
+  font-size: 60px;
+}
+.condition {
+  grid-area: c;
+  font-size: 50px;
+  color: white;
+}
+.conditionPic {
+  grid-area: s;
+  width: 150px;
+}
